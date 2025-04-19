@@ -1,5 +1,5 @@
-import ProductCard from "../components/ProductCard";
-import Slider from "../components/Slider";
+import ProductCard from "../components/Layout/ProductCard";
+
 function Home() {
     const products = [
         {
@@ -20,17 +20,18 @@ function Home() {
         
     ]
     return (
-      <section className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        {products.map((item, index) =>(
-            <ProductCard 
-            key={index}
-            name={item.name}
-            price={item.price}
-            image={item.image}
-            />
-        ))}
-        {/* Daha fazla ürün eklenebilir */}
-      </section>
+      <><div className="p-4">
+        <h1 className="text-2xl font-bold">Ana Sayfa</h1>
+      </div><section className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          {products.map((item, index) => (
+            <ProductCard
+              key={index}
+              name={item.name}
+              price={item.price}
+              image={item.image} />
+          ))}
+          {/* Daha fazla ürün eklenebilir */}
+        </section></>
     );
     function Slider() {
         const [sliderRef] = useKeenSlider({
